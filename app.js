@@ -46,6 +46,6 @@ app.use('/users', require('./routes/user'))
 app.use('/auth', require('./routes/auths'))
 
 app.listen(port, () => {
-  db.sequelize.sync({ force: true })
+  db.sequelize.sync()
   console.log(`App is running on localhost:${port}`)
 })

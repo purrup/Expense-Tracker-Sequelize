@@ -4,7 +4,7 @@
     <form action="/" method="GET" class="row justify-content-between" id="form">
       <div class="form-group row mb-5 col-5 flex-md-row align-items-md-center">
         <div class="col-sm-4">
-          {{!-- <select class="custom-select mr-sm-2" id="month" name="month" oninput="form.submit()" form="form">
+          <select class="custom-select mr-sm-2" id="month" name="month" oninput="form.submit()" form="form">
             {{#if month}}
             <option value={{{month}}} selected>
               {{{month}}}
@@ -14,18 +14,13 @@
             <option value="" selected>月份</option>
             {{/if}}
 
-            {{#if filterMonthList }}
-            {{#each filterMonthList}}
-            <option value="{{{this.value}}}">{{this.value}}</option>
-            {{/each}}
 
-            {{else}}
             {{#each monthList}}
             <option value="{{{this.value}}}">{{this.value}}</option>
             {{/each}}
 
-            {{/if}}
-          </select> --}}
+
+          </select>
         </div>
 
       </div>
@@ -48,13 +43,13 @@
 <div class="row total-amount mb-5">
   <div class="col-12">
     <div class="row">
-      {{!-- <p>總金額：</p><span>{{totalAmount}}</span> --}}
+      <p>總金額：</p><span>{{totalAmount}}</span>
     </div>
   </div>
 </div>
 <div class="row mb-5">
 
-  {{!-- <ul class="list-group ">
+  <ul class="list-group ">
     {{#each records}}
     <li
       class="list-group-item-active list-group-item-action list-group-item-light d-md-flex flex-row justify-content-between align-items-center mb-3">
@@ -74,7 +69,7 @@
 
     </li>
     {{/each}}
-  </ul> --}}
+  </ul>
 </div>
 <div class="row create mt-3">
   <a href="/records/new" class="btn btn-primary mb-3">新增支出</a>

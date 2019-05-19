@@ -11,12 +11,12 @@ router.get('/', authenticated, (req, res) => {
 })
 
 // 前往新增一筆支出的頁面
-router.get('/:id', authenticated, (req, res) => {
-  res.send('新增一筆支出')
+router.get('/new', authenticated, (req, res) => {
+  res.render('new')
 })
 
 // 新增一筆支出
-router.post('/', authenticated, (req, res) => {
+router.post('/new', authenticated, (req, res) => {
   Record.create({
     name: req.body.name,
     category: req.body.category,
@@ -34,7 +34,23 @@ router.post('/', authenticated, (req, res) => {
 
 // 前往修改一筆支出的頁面
 router.get('/:id/edit', authenticated, (req, res) => {
-  res.send('修改一筆支出')
+  User.findByPk(req.user.id)
+    .then(user => {
+      if (!user) {
+        return res.error()
+      }
+      Record.findOne({
+        where: {
+          UserId: req.user.id,
+          Id: req.params.id,
+        },
+      }).then(record => {
+        return res.render('edit', { record })
+      })
+    })
+    .catch(error => {
+      return res.status(422).json(error)
+    })
 })
 
 // 修改一筆支出
@@ -53,7 +69,7 @@ router.put('/:id', authenticated, (req, res) => {
     record
       .save()
       .then(record => {
-        return res.redirect(`/records/${req.params.id}`)
+        return res.redirect('/')
       })
       .catch(err => {
         return res.status(422).json(err)
