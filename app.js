@@ -8,9 +8,10 @@ const db = require('./models')
 const flash = require('connect-flash')
 const session = require('express-session')
 const methodOverride = require('method-override')
-
-const Record = db.Record
-const User = db.User
+const handlebars = require('handlebars')
+const helpers = require('handlebars-helpers')({
+  handlebars: handlebars,
+})
 
 app.use(
   session({
@@ -36,36 +37,8 @@ app.set('view engine', 'handlebars')
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
 
-// 列出所有開支
-app.get('/', (req, res) => {
-  res.send('列出所有開支')
-})
-
-// 前往新增一筆支出的頁面
-app.get('/:id', (req, res) => {
-  res.send('新增一筆支出')
-})
-
-// 新增一筆支出
-app.post('/:id', (req, res) => {
-  res.send('新增一筆支出')
-})
-
-// 前往修改一筆支出的頁面
-app.get('/:id/edit', (req, res) => {
-  res.send('修改一筆支出')
-})
-
-// 修改一筆支出
-app.put('/:id', (req, res) => {
-  res.send('修改一筆支出')
-})
-
-// 刪除一筆支出
-app.delete('/:id', (req, res) => {
-  res.send('刪除一筆支出')
-})
-
+app.use('/', require('./routes/home'))
+app.use('/records', require('./routes/record'))
 app.use('/users', require('./routes/user'))
 
 app.listen(port, () => {

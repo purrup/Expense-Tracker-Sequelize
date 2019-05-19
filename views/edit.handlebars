@@ -1,0 +1,101 @@
+<div class="col-md-12 mx-auto flex-md-column align-items-md-center edit">
+  <div class="row my-5">
+    <div class="col-md-4 must-column-remind">
+      <h5 class="font-weight-bold">*必填欄位</h5>
+    </div>
+    <div class="col-md-8">
+      <h2 class="font-weight-bold">請修改你的支出</h2>
+    </div>
+  </div>
+
+  <form action="/records/{{{record.id}}}?_method=PUT" method="POST" class="needs-validation" novalidate>
+
+    <div class="form-group row mb-5">
+      <label for="name" class="col-sm-4 col-form-label col-form-label-lg py-0">名稱*</label>
+      <div class="col-sm-4">
+        <input type="text" name="name" class="form-control form-control-lg" id="name" placeholder=""
+          value="{{{record.name}}}" required>
+      </div>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+      <div class="invalid-feedback">
+        Please enter something.
+      </div>
+    </div>
+
+    <div class="form-group row mb-5">
+      <label for="date" class="col-sm-4 col-form-label col-form-label-lg py-0">日期*</label>
+      <div class="col-sm-4">
+        <input type="date" name="date" class="form-control form-control-lg" id="date" placeholder=""
+          value="{{{record.date}}}" required>
+      </div>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+      <div class="invalid-feedback">
+        Please choose a date.
+      </div>
+    </div>
+
+    {{!-- <div class="form-group row mb-5">
+      <label for="category" class="col-sm-4 col-form-label col-form-label-lg py-0">類別*</label>
+      <div class="col-sm-4">
+        <select class="custom-select mr-sm-2" id="category" name="category" required>
+          <option selected>Select*</option>
+          <option value="home" {{#eq record.category "home"}}selected{{/eq}}>家居物業</option>
+          <option value="shuttle-van" {{#eq record.category "shuttle-van"}}selected{{/eq}}>交通出行</option>
+          <option value="grin-beam" {{#eq record.category "grin-beam"}}selected{{/eq}}>休閒娛樂</option>
+          <option value="utensils" {{#eq record.category "utensils"}}selected{{/eq}}>餐飲食品</option>
+          <option value="pen" {{#eq record.category "pen"}}selected{{/eq}}>其他</option>
+        </select>
+      </div>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+      <div class="invalid-feedback">
+        Please choose a category.
+      </div>
+    </div> --}}
+
+    <div class="form-group row mb-5">
+      <label for="amount" class="col-sm-4 col-form-label col-form-label-lg py-0">金額*</label>
+      <div class="col-sm-4">
+        <input type="number" name="amount" class="form-control form-control-lg" id="amount" placeholder="請輸入金額"
+          value="{{{record.amount}}}" required>
+      </div>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+      <div class="invalid-feedback">
+        Please enter an amount.
+      </div>
+    </div>
+    <div class="col-md-8 d-flex justify-content-end">
+      <button class="btn btn-primary" id="create-record" type="submit">修改完成</button>
+    </div>
+  </form>
+</div>
+
+
+
+<script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+  (function () {
+    'use strict';
+    window.addEventListener('load', function () {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function (form) {
+        form.addEventListener('submit', function (event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+</script>

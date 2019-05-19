@@ -1,0 +1,83 @@
+<div class="col-md-12 mx-auto flex-md-column align-items-md-center">
+  <div class="row my-5" id="filter">
+
+    <form action="/" method="GET" class="row justify-content-between" id="form">
+      <div class="form-group row mb-5 col-5 flex-md-row align-items-md-center">
+        <div class="col-sm-4">
+          {{!-- <select class="custom-select mr-sm-2" id="month" name="month" oninput="form.submit()" form="form">
+            {{#if month}}
+            <option value={{{month}}} selected>
+              {{{month}}}
+            </option>
+
+            {{else}}
+            <option value="" selected>月份</option>
+            {{/if}}
+
+            {{#if filterMonthList }}
+            {{#each filterMonthList}}
+            <option value="{{{this.value}}}">{{this.value}}</option>
+            {{/each}}
+
+            {{else}}
+            {{#each monthList}}
+            <option value="{{{this.value}}}">{{this.value}}</option>
+            {{/each}}
+
+            {{/if}}
+          </select> --}}
+        </div>
+
+      </div>
+      <div class="form-group row mb-5 col-5 flex-md-row align-items-md-center">
+        <div class="col-sm-4">
+          <select class="custom-select mr-sm-2" id="category" name="category" oninput="form.submit()" form="form">
+            <option selected value="">類別</option>
+            <option value="utensils">餐飲食品</option>
+            <option value="shuttle-van">交通出行</option>
+            <option value="grin-beam">休閒娛樂</option>
+            <option value="home">家居物業</option>
+            <option value="pen">其他</option>
+          </select>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</div>
+<div class="row total-amount mb-5">
+  <div class="col-12">
+    <div class="row">
+      {{!-- <p>總金額：</p><span>{{totalAmount}}</span> --}}
+    </div>
+  </div>
+</div>
+<div class="row mb-5">
+
+  {{!-- <ul class="list-group ">
+    {{#each records}}
+    <li
+      class="list-group-item-active list-group-item-action list-group-item-light d-md-flex flex-row justify-content-between align-items-center mb-3">
+      <i class="fas fa-{{{this.category}}}"></i>
+      <div class="expense-name col-md-auto mr-auto">
+        <p>{{this.name}}</p><span>{{this.date}}</span>
+      </div>
+      <div class="amount col-auto mr-auto">
+        <span>{{this.amount}}</span>
+      </div>
+      <div class="col-auto">
+        <a href="/records/{{{this.id}}}/edit" class="btn btn-success btn-lg">修改</a>
+        <form action="/records/{{{this.id}}}/delete?_method=DELETE" method="post" style="display:inline">
+          <button type="submit" class="btn btn-danger btn-lg">刪除</button>
+        </form>
+      </div>
+
+    </li>
+    {{/each}}
+  </ul> --}}
+</div>
+<div class="row create mt-3">
+  <a href="/records/new" class="btn btn-primary mb-3">新增支出</a>
+</div>
+
+<script src="/javascripts/index.js"></script>
