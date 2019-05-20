@@ -27,16 +27,30 @@
       <div class="form-group row mb-5 col-5 flex-md-row align-items-md-center">
         <div class="col-sm-4">
           <select class="custom-select mr-sm-2" id="category" name="category" oninput="form.submit()" form="form">
-            <option selected value="">類別</option>
+
+            {{#if category}}
+            <option value={{{category}}} selected>
+              {{{categoryName}}}
+            </option>
+            {{else}}
+            <option value="" selected>類別</option>
+            {{/if}}
+
+            {{#each categoryList}}
+            <option value="{{{this.font}}}">{{this.name}}</option>
+            {{/each}}
+            {{!-- <option value="">類別</option>
             <option value="utensils">餐飲食品</option>
             <option value="shuttle-van">交通出行</option>
             <option value="grin-beam">休閒娛樂</option>
             <option value="home">家居物業</option>
-            <option value="pen">其他</option>
+            <option value="pen">其他</option> --}}
           </select>
         </div>
       </div>
     </form>
+
+
 
   </div>
 

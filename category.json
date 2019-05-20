@@ -1,0 +1,24 @@
+{
+  "results": [
+    {
+      "font": "utensils",
+      "name": "餐飲食品"
+    },
+    {
+      "font": "shuttle-van",
+      "name": "交通出行"
+    },
+    {
+      "font": "grin-beam",
+      "name": "休閒娛樂"
+    },
+    {
+      "font": "home",
+      "name": "家居物業"
+    },
+    {
+      "font": "pen",
+      "name": "其他"
+    }
+  ]
+}

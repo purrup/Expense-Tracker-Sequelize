@@ -170,6 +170,11 @@ form .form-group label {
   font-size: 2em;
 }
 
+#new #category {
+  font-size: 1.5em;
+  min-height: 2em;
+}
+
 /* edit */
 #edit .must-column-remind h5 {
   padding-left: 10em;
@@ -187,4 +192,9 @@ form .form-group label {
 #edit button#create-record {
   width: 48.5%;
   font-size: 2em;
+}
+
+#edit #category {
+  font-size: 1.5em;
+  min-height: 2em;
 }
