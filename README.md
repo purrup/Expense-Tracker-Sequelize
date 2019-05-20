@@ -36,10 +36,9 @@ $ npm run start
 
    http://localhost:3000
 
-5. 在專案中新增.env 檔並建立隱藏變數如下
+5. 在專案中新增.env 檔並建立隱藏變數
 
-隱藏的 facebook 第三方登入變數如下
-
+- 隱藏的 facebook 第三方登入變數如下
 - FACEBOOK_ID=304555647135657
 - FACEBOOK_SECRET=bd9dc40bb5c509a31525ec1891c35ccb
 - FACEBOOK_CALLBACK=http://localhost:3000/auth/facebook/callback
