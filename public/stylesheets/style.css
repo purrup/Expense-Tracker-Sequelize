@@ -93,6 +93,9 @@ form .form-group label {
 }
 
 /* index */
+#index #clear-filter {
+  font-size: 1.6em;
+}
 /* 總金額 */
 #index .row.total-amount p {
   font-size: 2.3em;

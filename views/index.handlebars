@@ -14,11 +14,9 @@
             <option value="" selected>月份</option>
             {{/if}}
 
-
             {{#each monthList}}
             <option value="{{{this.value}}}">{{this.value}}</option>
             {{/each}}
-
 
           </select>
         </div>
@@ -39,18 +37,15 @@
             {{#each categoryList}}
             <option value="{{{this.font}}}">{{this.name}}</option>
             {{/each}}
-            {{!-- <option value="">類別</option>
-            <option value="utensils">餐飲食品</option>
-            <option value="shuttle-van">交通出行</option>
-            <option value="grin-beam">休閒娛樂</option>
-            <option value="home">家居物業</option>
-            <option value="pen">其他</option> --}}
+
           </select>
         </div>
       </div>
     </form>
 
-
+    <div class="col-md-3 mx-auto">
+      <a href="/" class="btn btn-dark btn-lg mt-1" id="clear-filter">清除篩選</a>
+    </div>
 
   </div>
 
