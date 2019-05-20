@@ -4,8 +4,8 @@ const Record = db.Record
 const User = db.User
 const router = express.Router()
 const { authenticated } = require('../config/auth')
-const monthList = require('../month.json').results
-const categoryList = require('../category.json').results
+const monthList = require('../data/month.json').results
+const categoryList = require('../data/category.json').results
 
 router.get('/', authenticated, (req, res) => {
   const month = req.query.month ? req.query.month : false
@@ -30,7 +30,6 @@ router.get('/', authenticated, (req, res) => {
             .filter(record => {
               // 如果有選月份，就將date中的月份slice出來並比對
               if (month) {
-                console.log(month)
                 return Number(record.date.slice(5, 7)) === Number(month)
               }
               return true
@@ -80,7 +79,6 @@ router.get('/', authenticated, (req, res) => {
             .filter(record => {
               // 如果有選月份，就將date中的月份slice出來並比對
               if (month) {
-                console.log(month)
                 return Number(record.date.slice(5, 7)) === Number(month)
               }
               return true
