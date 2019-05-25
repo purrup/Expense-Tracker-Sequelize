@@ -28,9 +28,11 @@ router.get('/', authenticated, (req, res) => {
           let totalAmount = 0
           records = records
             .filter(record => {
-              // 如果有選月份，就將date中的月份slice出來並比對
+              // 篩選月份
               if (month) {
-                return Number(record.date.slice(5, 7)) === Number(month)
+                let recordMonth = new Date(record.date).getMonth() + 1
+                console.log(recordMonth)
+                return recordMonth === Number(month)
               }
               return true
             })
@@ -77,9 +79,11 @@ router.get('/', authenticated, (req, res) => {
           let totalAmount = 0
           records = records
             .filter(record => {
-              // 如果有選月份，就將date中的月份slice出來並比對
+              // 篩選月份
               if (month) {
-                return Number(record.date.slice(5, 7)) === Number(month)
+                let recordMonth = new Date(record.date).getMonth() + 1
+                console.log(recordMonth)
+                return recordMonth === Number(month)
               }
               return true
             })

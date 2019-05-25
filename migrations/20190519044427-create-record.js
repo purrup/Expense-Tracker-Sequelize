@@ -18,7 +18,7 @@ module.exports = {
       },
       date: {
         allowNull: false,
-        type: Sequelize.STRING,
+        type: Sequelize.DATEONLY,
       },
       amount: {
         allowNull: false,

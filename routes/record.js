@@ -18,10 +18,7 @@ router.get('/new', authenticated, (req, res) => {
 // 新增一筆支出
 router.post('/new', authenticated, (req, res) => {
   Record.create({
-    name: req.body.name,
-    category: req.body.category,
-    date: req.body.date,
-    amount: req.body.amount,
+    ...req.body,
     UserId: req.user.id,
   })
     .then(record => {
