@@ -2,8 +2,6 @@
 
 記錄你的生活開銷，理財首先從記帳開始！
 
-## 安裝指示
-
 ---
 
 # Installing
@@ -17,7 +15,7 @@ $ git clone https://github.com/purrup/Expense-Tracker-Sequelize.git
 進入專案資料夾
 
 ```
-$ cd todo-sequelize
+$ cd expense-tracker-sequelize
 ```
 
 2. install npm
@@ -26,15 +24,17 @@ $ cd todo-sequelize
 $ npm install
 ```
 
-3. activate app.js
+3. create DB
 
 ```
-$ npm run start
+$ npx sequelize db:create expense_tracker_sequelize
 ```
 
-4. type this URL in your browser
+4. migrate
 
-   http://localhost:3000
+```
+$ npx sequelize db:migrate
+```
 
 5. 在專案中新增.env 檔並建立隱藏變數
 
@@ -42,6 +42,16 @@ $ npm run start
 - FACEBOOK_ID=304555647135657
 - FACEBOOK_SECRET=bd9dc40bb5c509a31525ec1891c35ccb
 - FACEBOOK_CALLBACK=http://localhost:3000/auth/facebook/callback
+
+6. activate app.js
+
+```
+$ npm run start
+```
+
+7. type this URL in your browser
+
+   http://localhost:3000
 
 ---
 
