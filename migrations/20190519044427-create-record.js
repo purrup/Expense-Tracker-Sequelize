@@ -32,14 +32,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
       },
-      userId: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'Users',
-          key: 'id',
-          allowNull: false,
-        },
-      },
     })
   },
   down: (queryInterface, Sequelize) => {
